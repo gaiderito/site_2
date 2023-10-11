@@ -22,6 +22,7 @@ header img{
     font-size: 3em;
     display: flex;
     text-align: center;
+    font-family: raleway;
 }
 
 .search{
@@ -73,10 +74,10 @@ form input{
 
 .menu{
     display: flex;
-    width: 25%;
-    flex-direction: column;
-    border-right: 2px ridge white;
+    width: auto;
     height: auto;
+    justify-content: space-around;
+    border-bottom: 2px solid white;
 }
 
 .menu a{
@@ -85,22 +86,24 @@ form input{
     font-family: Raleway;
     font-size: 2em;
     padding: 15px;
+    font-style: italic;
     width: max-content;
 }
 
 .menu a:hover{
     text-decoration: underline;
+    color: greenyellow;
 }
 
 
 
 .content{
     padding-top: 30px;
-    width: 75%;
+    width: auto;
     display: flex;
     text-align: center;
     color: white;
-    font-family: cursive;
+    font-family: raleway;
     justify-content: center;
     font-size: 2em;
     font-style: italic;
@@ -140,14 +143,18 @@ form input{
     margin-bottom: 3em;
 }
 
+.content a:hover{
+    border-color: black;
+    color: black;
+}
+
 
 .messi{
     background-size: cover;
-    background-image: url(img/mesi.jpg);
+    background-image: url(img/back.jpg);
     width: 18em;
     height: 15em;
     display: flex;
-    border: 3px solid white;
     align-items: flex-end;
     justify-content: center;
 }
