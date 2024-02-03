@@ -1,0 +1,80 @@
+.back{
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.back a{
+border: 2px solid greenyellow;
+padding: 10px;
+border-radius: 15px;
+transition: 0.4s;
+}
+
+.back a:hover{
+    text-decoration: none;
+    background-color: greenyellow;
+    border-color: black;
+    color: black;
+    transition: 0.4s;
+}
+
+.block-reg{
+    width: 100%;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.register{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(42, 42, 42);
+    padding: 30px;
+    box-shadow: 3px 2px 7px greenyellow;
+    border-radius: 15px;
+    align-items: center;
+}
+
+.register input{
+    margin: 15px 0;
+    background-color: unset;
+    color: greenyellow;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 1px solid white ;
+}
+
+.register h2{
+    text-align: center;
+}
+
+.register button{
+    width: min-content;
+    background-color: greenyellow;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.register button:hover{
+    background-color: rgb(140, 201, 49);
+    transition: 0.4s;
+}
+
+.register p{
+    margin-bottom: 0;
+    font-size: 14px;
+}

@@ -1,49 +1,87 @@
 body{
     margin: 0;
-    background-image: url(img/bg.jpg);
-    background-repeat: no-repeat;
+    background-color: rgb(28, 28, 28);
+    background-repeat: repeat;
     background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 100px;
+    margin-right: 100px;
 }
+
+a{
+    text-decoration: none;
+    color: greenyellow;
+    cursor: pointer;
+}
+
+
 
 header{
     display: flex;
-    height: 12em;
+    padding-top: 10px;
+    padding-bottom: 10px;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid white;
+    border-bottom: 1px solid white;
 }
 
 header img{
-    max-width: 12em;
-    max-height: 12em;
+    max-width: 7em;
+    max-height: 7em;
 }
 
 .oficial{
     color: white;
-    font-style: italic;
-    font-size: 3em;
+    font-size: 2em;
     display: flex;
     text-align: center;
-    font-family: raleway;
+    font-family: 'Roboto';
+}
+
+.nazv{
+    color: white;
+    display: flex;
+    align-items: center;
 }
 
 .search{
     display: flex;
     align-items: end;
-    height: 100%;
-    padding-bottom: 30px;
-    padding-right: 70px;
+    height: 100%;   
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search a img{
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.op{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: white;
+}
+
+.reg{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .search button{
-    width: 3em;
-    height: 3em;
+    width: 2.2em;
+    height: 2.2em;
     background-position: center;
     background-image: url(img/lupa.png);
     background-size: cover;
     background-color: unset;
     border-radius: 50%;
-    border: 2px solid;
+    
 }
 
 form{
@@ -56,7 +94,7 @@ form input{
     border: none;
     border-bottom: 1px solid white;
     font-style: italic;
-    font-size: 1em;
+    font-size: 14px;
     color: white;
     outline: none;
 }
@@ -69,20 +107,19 @@ form input{
 }
 .menu{
     display: flex;
-    width: 100%;
-   justify-content: space-around;
+    width: 40%;
+    justify-content: space-between;
     border-bottom: 2px ridge white;
     height: auto;
-    
+    margin-bottom: 20px;
 }
 
 .menu a{
     text-decoration: none;
     color: white;
-    font-family: Raleway;
-    font-size: 2em;
-    padding: 15px;
-    font-style: italic;
+    font-family: roboto;
+    font-size: 16px;
+    padding: 5px;
     width: max-content;
 }
 
@@ -103,7 +140,6 @@ form input{
     display: flex;
     text-align: center;
     color: white;
-    font-family: raleway;
     justify-content: center;
     font-size: 2em;
     font-style: italic;
@@ -111,75 +147,88 @@ form input{
     align-items: center;
 }
 
-.content input{
-    width: 1.3em;
-    height: 1.3em;
-    background-color: white;
-
-}
-
-.content p{
-    font-style: normal;
-    font-size: 1rem;
-}
-
-.content p a{
-    text-decoration: none;
-    color: rgb(42, 105, 251);
-    background-color: unset;
-    border: none;
-}
-
-.content p a:hover{
-    text-decoration: underline;
-    color: rgb(42, 105, 251);
-}
-
-.spisok{
+.first-disp{
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.big-text{
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
     text-align: left;
-    color: aliceblue;
-    font-size: 0.7em;
-    font-family: raleway;
-}
-.spisok li{
-    padding-top: 5px;
-}
-
-.spisok li:nth-child(1){
-   margin-left: 3em;
-}
-
-.spisok li:nth-child(4){
-    margin-left: 3em;
-}
-
-.content a{
-    padding: 5px;
-    background-color: rgb(0, 109, 0);
     color: white;
-    border: 3px solid white;
-    border-radius: 15px;
-    text-decoration: none;
-    width: 3em;
-    font-family: Roboto Slab;
-    font-style: normal;
-    margin-bottom: 3em;
 }
 
-.content a:hover{
+.big-text h1{
+    margin-bottom: 0;
+}
+
+.big-text a{
+    padding: 10px;
+    font-size: 14px;
+    background-color: greenyellow;
     color: black;
-    border-color: black;
+    font-weight: 700;
 }
 
-.messi{
-    background-size: cover;
-    background-image: url(img/messi.jpg);
-    width: 70%;
-    height: 15em;
+.information{
+    background-image: url(img/BOOK-BAZAAR.jpg);
+    background-size: contain;
+    color: white;
+    padding: 40px;
+    width: 50%;
+}
+
+.top-content{
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.blocks{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.littleblocks{
+    display: flex;
+    justify-content: space-between;
+}
+
+.blocha{
+    padding: 10px 15px;
+    background-color: rgba(28, 28, 28, 0.945);
+    font-size: 14px;
+    color: white;
+
+}
+
+.bigblock{
+    background-color: rgba(28, 28, 28, 0.947);
+    padding: 30px;
+    border-top-right-radius: 30px;
+    font-size: 16px;
+}
+
+.fotos{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.fotos img{
+    height: 180px;
+}
+
+.bot-content{
+    background-color: rgba(28, 28, 28, 0.962);
+    margin-top: 20px;
+    padding: 10px 15px 
 }
 
 footer{
@@ -190,10 +239,10 @@ footer{
     align-items: center;
     justify-content: center;
     font-family: raleway;
-    border-top: 2px solid white;
-    font-size: 1.3em;
+    font-size: 14px;
     padding-top: 40px;
     padding-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 hr{
@@ -211,9 +260,7 @@ hr{
     display: flex;
     flex-direction: column;
     color: white;
-    font-family: raleway;
-    font-style: italic;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 .questions a{
@@ -244,40 +291,51 @@ hr{
     display: flex;
     padding: 40px 0px;
     color: white;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .foto{
     width: 100%;
     height: 70%;
-    background-image: url(img/strray.jpg);
+    background-image: url(img/king_stiven.jpg);
     background-size: cover;
 }
 
+.info .card:nth-child(2){
+    background-image: url(img/psy.jpg);
+    background-position: center;
+}
+
+.info .card:nth-child(3) {
+    background-image: url(img/musk\ \(1\).jpg);
+}
+
+.info .card:nth-child(4) {
+    background-image: url(img/adventure.jpg);
+}
+
 .card{
-    background-color: rgb(0, 0, 0);
+    background-image: url(img/fear.jpg);
+    background-size: cover;
     width: 14em;
     height: 18em;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: white;
-    font-family: raleway;
-    align-items: center;
-    text-align: center;
+    align-items: end;
+    justify-content: center;
+}
+
+.card a{
+    margin-bottom: 30px;
     border: 1px solid greenyellow;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius:15px ;
-    
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.581);
+
 }
 
-.card h3, h5, h6{
-    margin: 0;
+.card a:hover{
+    text-decoration: underline;
 }
 
-h1{
-    color: white;
-    text-align: center;
-    font-family: raleway;
-    font-style: italic;
-}
+
+
+
