@@ -1,0 +1,84 @@
+.profile{
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.profileimg{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profileimg h2{
+    margin: 0;
+    color: white;
+    font-weight: 400;
+}
+
+.profileimg a{
+    padding: 10px;
+    border: 1px solid greenyellow;
+    margin-top: 10px;
+}
+
+.xyu a{
+    padding: 10px;
+    font-size: 14px;
+    background-color: greenyellow;
+    color: black;
+    font-weight: 700;
+}
+
+.xyu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    justify-content: center;
+    color: white;
+}
+
+.kniga{
+    display: flex;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.attr{
+    margin-left: 100px;
+}
+
+.kniga form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.kniga form input{
+    text-align: center;
+}
+
+.kniga form button{
+    padding: 10px;
+    font-size: 14px;
+    background-color: greenyellow;
+    color: black;
+    font-weight: 700;
+    margin-top: 20px;
+    
+}
+
+
+.all{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stroka{
+    display: flex;
+    
+}

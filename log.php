@@ -1,35 +1,26 @@
 <?php
-require_once('db.php');
 
-$login = $_POST['login'];
-$pass = $_POST['pass'];
+    session_start();
+    session_name($login);
+    require_once 'db.php';
 
-    $sql = "SELECT * FROM `users` WHERE login = '$login' AND pass = '$pass'";
-    $result = $conn->query($sql);
-    $correct ="correct";
-if ($result->num_rows > 0){
-    while($row = $result->fetch_assoc()){
-          $profile = $row['login'];
-          
-        
+    $login = $_POST['login'];
+    $pass = $_POST['pass'];
+
+    $check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE `login` = '$login' AND `pass` = '$pass'");
+    if (mysqli_num_rows($check_user) > 0) {
+
+        $user = mysqli_fetch_assoc($check_user);   
+
+        $_SESSION['user'] = [
+            "id" => $user['id'],
+            "login" => $user['login'],
+            "email" => $user['email']
+        ];
+
+        header('Location: index.php');
+
+    } else {
+        header('Location: login.php');
     }
-}
-else{
-    $correct = "not";
-}
-?>
-
-<script>
-    let prof = "<?php echo $profile;?>";
-    let okay = "<?php echo $correct;?>";
-    if (okay =="correct"){
-        alert("Добро пожаловать, " + prof);
-    let timer = setTimeout(function(){
-        window.location='index.php'
-    }, 100);}
-    else{
-        alert("Пароли не совпадают!");
-    let timer = setTimeout(function(){
-        window.location='login.php'
-    }, 100);}
-</script>
+    ?>

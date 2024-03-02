@@ -14,21 +14,16 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="back"><a href="index.html">Вернуться на главную</a></div>
+    <div class="back"><a href="index.php">Вернуться на главную</a></div>
     <div class="block-reg">
         <form action="reg.php" method="post" class="register">
             <h2>Регистрация</h2>
             <input type="text" name="login" placeholder="Логин" required>
             <input type="text" name="pass" placeholder="Пароль" required>
-            <input type="text" name="email" placeholder="Email" required>
+            <input type="email" name="email" placeholder="Email" required>
             <input type="text" name="repeatpass" placeholder="Повторите пароль" required>
-            <div style="font-size: 14px;"><input type="checkbox" name="" id=""> Я соглaсен с обработкой <a>персональнынх данных</a></div>
-            <script>
-                if input.value===""{
-                    
-                }
-            </script>
-            <button type="submit">Зарегистрироваться</button>
+            <div style="font-size: 14px;"><input class="check" type="checkbox"> Я соглaсен с обработкой <a>персональнынх данных</a></div>
+            <button class="but" type="submit">Зарегистрироваться</button>
             <p>Уже есть аккаунт? <a href="login.php">Войти</a></p>
         </form> 
     </div>

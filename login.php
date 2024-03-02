@@ -22,9 +22,8 @@
             <input type="text" name="pass" placeholder="Пароль" required>
             <div><input type="checkbox" name=""> Чужой компьютер</div>
             <button type="submit">Войти</button>
-            <p>У вас нет аккаунта?<a href="register.php"> Зарегестрироваться</a></p>
+            <p>У вас нет аккаунта?<a href="register.php"> Зарегистрироваться</a></p>
         </div>
     </form>
-
 </body>
 </html>

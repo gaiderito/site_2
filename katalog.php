@@ -1,3 +1,13 @@
+<?php 
+session_start();
+require_once('db.php');
+
+if ($_SESSION['user']){
+    $session = "okay";
+} else{
+    $session = "not";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +35,8 @@
         <div class="search">
             <div class="reg">
                 <div class="op"><a href=""><img src="img/korzina.png" alt=""></a><a href="">Корзина</a></div>
-                <div class="op"><a href="login.php"><img src="img/profile2.png" alt=""></a><a href="login.php">Профиль</a></div>
+                <div class="op"><a href="login.php" id="profile"><img src="img/profile2.png" alt=""></a><a href="login.php" id="profile1">
+                    <?php if ($_SESSION['user']){ print_r($_SESSION ['user']['login']); } else{ echo("Профиль"); } ?></a></div>
             </div>
             <form>
             <input type="search" placeholder="Поиск">
@@ -36,7 +47,7 @@
 
 <div class="container">
     <div class="menu">
-        <a href="index.php">О нас</a>
+        <a href="index.php">Главная</a>
         <a href="katalog.php">Каталог</a>
         <a href="">Отзывы</a>
         <a href="">FAQ</a>
@@ -49,32 +60,40 @@
 </div>
 
 <div class="catalog">
-    <div class="tovar"><img src="img/book4.png" alt=""><h4>Тетрадь смерти</h4><p>краткое описание книги</p><div class="invisible"><a href="">499р</a></div></div>
-    <div class="tovar"><img src="img/book5.jpg" alt=""><h4>История 5 класс</h4><p>краткое описание книги</p><div class="invisible"><a href="">599р</a></div></div>
-    <div class="tovar"><img src="img/book3.jpg" alt=""><h4>Дневник 3</h4><p>краткое описание книги</p><div class="invisible"><a href="">1499р</a></div></div>
-    <div class="tovar"><img src="img/book1.jpg" alt=""><h4>Талант</h4><p>краткое описание книги</p><div class="invisible"><a href="">999р</a></div></div>
-    <div class="tovar"><img src="img/sunboy.jpg" alt=""><h4>Санбой</h4><p>краткое описание книги</p><div class="invisible"><a href="">799р</a></div></div>
+    <?php 
+    $query = "SELECT * FROM `katalog`";
+
+    $result = mysqli_query($connect, $query);
+    
+    /* извлечение ассоциативного массива */
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo('<div class="tovar"><img src="'.$row["foto"].'" alt=""><h4>'.$row["product"].'</h4><p>краткое описание книги</p><a href="buy.php">'.$row["price"].'р</a></div>');
+       
+    }
+    ?>
+    
 </div>
-<div class="catalog">
-    <div class="tovar"><img src="img/sunboy.jpg" alt=""><h4>Санбой</h4><p>краткое описание книги</p><div class="invisible"><a href="">799р</a></div></div>
-    <div class="tovar"><img src="img/ursa.jpg" alt=""><h4>Урса</h4><p>краткое описание книги</p><div class="invisible"><a href="">499р</a></div></div>
-    <div class="tovar"><img src="img/fight.jpg" alt=""><h4>Бойцовский клуб</h4><p>краткое описание книги</p><div class="invisible"><a href="">899р</a></div></div>
-    <div class="tovar"><img src="img/drive.jpg" alt=""><h4>Драйв</h4><p>краткое описание книги</p><div class="invisible"><a href="">999р</a></div></div>
-    <div class="tovar"><img src="img/sunboy.jpg" alt=""><h4>Санбой</h4><p>краткое описание книги</p><div class="invisible"><a href="">799р</a></div></div>
-</div>
+<?php
+    if ($_SESSION ['user']['login'] == "Admin" ){
+    echo('<div style="width: 100%; margin-bottom: 70px; height: 200px;"><form style="height:100%; width: 250px; padding:25px; align-items:center; background-color:grey; display: flex; flex-direction: column; justify-content: space-between;" novalidate style="display: flex; flex-direction: column;" action="add.php" method="post">
+    <h4 style="margin:0; color: greenyellow;">Фото товара:</h4><input type="file">
+    <input required placeholder="Название" style="background-color: white; color: black;" type="text" name="nazva">
+    <input placeholder="Цена" style="background-color: white; color: black;" type="text" name="pricee">
+    <button type="submit">Добавить в каталог</button></form></div>');}
+?>
 
-
-
-
+<script src="script.js">
+    
+</script>
 <footer>
-    никакие права не защищены
+    Все права защищены, копирование строго запрещено
     <hr>
 <div class="foot">
     <div class="questions">Часто задаваемые вопросы:
-        <a href="">Вопрос 1</a>
-        <a href="">Вопрос 2</a>
-        <a href="">Вопрос 3</a>
-        <a href="">Вопрос 4</a>
+        <a  style="margin-top: 20px;"  href="">Сколько ждать доставку?</a>
+        <a href="">В каких странах действует магазин?</a>
+        <a href="">Партнеры</a>
+        <a href="">Возврат товара</a>
     </div>
     <div class="images">
         <a href="https://t.me/gaiderito"><img src="img/tg.png" alt=""></a>
@@ -82,8 +101,22 @@
         <a href="https://vk.com/gaiderito_bohhroma"><img src="img/vk.png" alt=""></a>
     </div>
 </div>
-<p style="font-size: 14px;">copy and paste</p>
+<p style="font-size: 14px;">ТЭК 2024</p>
 </footer>
+<script>
+    
+    let proverka = "<?php echo $session;?>";
+    if (proverka == "okay"){
+        document.getElementById("profile").href="profile.php";
+        document.getElementById("profile1").href="profile.php";
+    } //Передал переменную php в JavaScript и заменил значение href если пользователь авторизирован. Теперь при нажатии на кнопку
+    //его перебрасывает на страницу профиля
+
+</script>
+
+<script>
+
+</script>
 </body>
 </html>
 </body>
