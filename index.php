@@ -34,7 +34,7 @@ if ($_SESSION['user']){
         <div class="oficial">KniggeR</div>
         <div class="search">
             <div class="reg">
-                <div class="op"><a href=""><img src="img/korzina.png" alt=""></a><a href="">Корзина</a></div>
+                
                 <div class="op"><a href="login.php" id="profile"><img src="img/profile2.png" alt=""></a><a href="login.php" id="profile1">
                     <?php if ($_SESSION['user']){ print_r($_SESSION ['user']['login']); } else{ echo("Профиль"); } ?></a></div>
                     <a href="logout.php">quit</a>

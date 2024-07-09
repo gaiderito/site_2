@@ -34,7 +34,7 @@ if ($_SESSION['user']){
         <div class="oficial">KniggeR</div>
         <div class="search">
             <div class="reg">
-                <div class="op"><a href=""><img src="img/korzina.png" alt=""></a><a href="">Корзина</a></div>
+                
                 <div class="op"><a href="login.php" id="profile"><img src="img/profile2.png" alt=""></a><a href="login.php" id="profile1">
                     <?php if ($_SESSION['user']){ print_r($_SESSION ['user']['login']); } else{ echo("Профиль"); } ?></a></div>
             </div>
@@ -67,7 +67,7 @@ if ($_SESSION['user']){
     
     /* извлечение ассоциативного массива */
     while ($row = mysqli_fetch_assoc($result)) {
-        echo('<div class="tovar"><img src="'.$row["foto"].'" alt=""><h4>'.$row["product"].'</h4><p>краткое описание книги</p><a href="buy.php">'.$row["price"].'р</a></div>');
+        echo('<form method="post" action="buy.php" class="tovar"><img src="'.$row["foto"].'" alt=""><h4>'.$row["product"].'</h4><p>краткое описание книги</p><input type="hidden" name="id" value="'.$row["id"].'"><button type="submit">'.$row["price"].'р</button></form>');
        
     }
     ?>

@@ -32,7 +32,7 @@ if ($_SESSION['user']){
         <div class="oficial">KniggeR</div>
         <div class="search">
             <div class="reg">
-                <div class="op"><a href=""><img src="img/korzina.png" alt=""></a><a href="">Корзина</a></div>
+                
                 <div class="op"><a href="login.php" id="profile"><img src="img/profile2.png" alt=""></a><a href="login.php" id="profile1">
                     <?php if ($_SESSION['user']){ print_r($_SESSION ['user']['login']); } else{ echo("Профиль"); } ?></a></div>
             </div>
@@ -52,7 +52,8 @@ if ($_SESSION['user']){
     </div>
 
     <?php 
-    $check_product = mysqli_query($connect, "SELECT * FROM `katalog` WHERE `product` = 'Бойцовский клуб'");
+    $id = $_POST['id'];
+    $check_product = mysqli_query($connect, "SELECT * FROM `katalog` WHERE `id` = '$id'");
     $kniga = mysqli_fetch_assoc($check_product);  
     echo('<div class="kniga">
     <img width="350px" src="'.$kniga["foto"].'" alt="">
@@ -66,6 +67,7 @@ if ($_SESSION['user']){
         </div>
         <form action="korzina.php" method="post">
         <input type="number" placeholder="Количество" name="skolko">
+        <input type="hidden" value="'.$kniga["id"].'" name="id">
         <button type="submit">Добавить в корзину</button>
         </form>
         </div>

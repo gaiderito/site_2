@@ -44,12 +44,11 @@
     justify-content: center;
 }
 
-.tovar:hover a{
-    width: 85%;
+.tovar:hover button{
+    width: 100%;
     text-align: center;
     transition: 0.4s;
-    background-color: greenyellow;
-    color: black;
+    
 }
 
 .tovar h4{
@@ -83,13 +82,16 @@
     margin-bottom: 40px;
 }
 
-.tovar a{
+.tovar button{
     background-color: black;
     padding: 5px 15px 6px 15px;
     font-size: 16px;
     transition: 0.5s;
+    color: greenyellow;
 }
 
-.tovar a:hover{
+.tovar button:hover{
     transition: 0.3s;
+    background-color: greenyellow;
+    color: black;
 }

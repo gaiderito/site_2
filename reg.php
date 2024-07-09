@@ -15,7 +15,7 @@
         header('Location: index.php');
 
     } else {
-        header('Location: register.php');
+        header('Location: ./register.php');
     }
 
     

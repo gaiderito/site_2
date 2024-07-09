@@ -3,8 +3,8 @@
 require_once('db.php');
 session_start();
 
-
-$check_product = mysqli_query($connect, "SELECT * FROM `katalog` WHERE `product` = 'Бойцовский клуб'");
+$id = $_POST['id'];
+$check_product = mysqli_query($connect, "SELECT * FROM `katalog` WHERE `id` = '$id'");
 if (mysqli_num_rows($check_product) > 0) {
 
     $kniga = mysqli_fetch_assoc($check_product);   
